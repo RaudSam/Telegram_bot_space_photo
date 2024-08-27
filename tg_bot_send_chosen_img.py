@@ -2,6 +2,7 @@ import argparse
 import os
 import telegram
 import asyncio
+import random
 from dotenv import load_dotenv
 
 
@@ -20,5 +21,9 @@ def main():
     parser.add_argument('--image_name', type=str, help="Введите название фото")
     parser_args = parser.parse_args()
 
+    if not image_name:
+        image_name = random.choice(
+            tuple(os.walk('images'))[0][2]
+        )
 
     asyncio.run(publish_an_image(parser_args.image_name, token, chat_id))
