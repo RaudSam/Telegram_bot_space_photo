@@ -25,7 +25,7 @@ def main():
     api_key = os.getenv('NASA_API_KEY')
 
     parser = argparse.ArgumentParser()
-    parser.add_argument('--count', default=3, type=int, help='Введите количество фотографий, которые хотите скачать')
+    parser.add_argument('--count', default=3, type=int, help='Введите количество фотографий, которое хотите скачать')
     args = parser.parse_args()
 
 
