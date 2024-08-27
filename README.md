@@ -17,7 +17,7 @@ pip install -r requirements.txt
 ```
 
 ### Использование скриптов
-#### fetch_spacex_images.py
+#### -fetch_spacex_images.py
 Этот скрипт загружает изображения, связанные с последним запуском SpaceX или указанным запуском, и сохраняет их в локальной папке «images». Если такой папки нет, он ее создает.
 
 Основая функция кода -`fetch_spacex_last_launch`. Для ее запуска вам понадобится `launch_id` - это id SpaceX запуска, если у вас такого нет, то скрипт по умолчанию скачает фото с последнего запуска.
@@ -27,7 +27,7 @@ pip install -r requirements.txt
 python fetch_spacex_images.py [--launch_id]
 ```
 
-#### fetch_nasa_apod_images.py
+#### -fetch_nasa_apod_images.py
 Этот скрипт загружает изображения из программы NASA Astronomy Picture of the Day [(APOD)](https://api.nasa.gov/#apod) и сохраняет их в локальной папке «images». 
 
 Основая функция кода -`fetch_nasa_apod_images`. Для ее запуска вам понадобится `NASA_API_KEY` - этот ваш ключ API от NASA и `count` - это кол-во изображений, которое вы хотите скачать.
@@ -37,7 +37,7 @@ python fetch_spacex_images.py [--launch_id]
 python fetch_nasa_apod_images.py [--count]
 ```
 
-#### fetch_nasa_epic_images.py
+#### -fetch_nasa_epic_images.py
 Этот скрипт загружает изображения Земли - NASA's Earth Polychromatic Imaging Camera [(EPIC)](https://api.nasa.gov/#epic) и сохраняет их в локальной папке «images». 
 
 Основая функция кода -`fetch_nasa_epic_images`. Для ее запуска вам понадобится `NASA_API_KEY` - этот ваш ключ API от NASA.
@@ -47,7 +47,7 @@ python fetch_nasa_apod_images.py [--count]
 python fetch_nasa_epic_images.py
 ```
 
-#### TG_bot.py
+#### -TG_bot.py
 Этот скрипт публикует изображения в указанный канал Telegram через определенные промежутки времени. 
 
 Основая функция кода -`send_messages`. Для ее запуска вам понадобится `TG_TOKEN` - этот ваш ключ API от бота, `TG_CHAT_ID` - id Telegram-канала, в котором будут опубликованы изображения и `time` - время в секундах, т.е. частота публикаций, которая вас интересует.
@@ -57,7 +57,7 @@ python fetch_nasa_epic_images.py
 python autopublish_images_bot.py 14400
 ```
 
-#### basic_script.py
+#### -basic_script.py
 Этот код содержит вспомогательные функции, которые используются в нескольких других скриптах. Он не предназначен для прямого запуска, но импортируется и используется другими скриптами.
 
 ### Цель проекта
