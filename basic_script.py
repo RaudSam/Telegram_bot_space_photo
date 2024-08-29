@@ -3,8 +3,8 @@ import os
 from urllib.parse import urlsplit, unquote
 
 
-def save_img(url, img_path):
-    response = requests.get(url)
+def save_img(url, img_path, params=None):
+    response = requests.get(url, params=params)
     response.raise_for_status()
     with open(img_path, 'wb') as file:
         file.write(response.content)
