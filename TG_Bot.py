@@ -14,7 +14,8 @@ async def send_messages(chat_id, token, time_sleep):
         random.shuffle(document_dir)
         for image in document_dir:
             path_to_file = f"./images/{image}"
-            await bot.send_photo(chat_id = chat_id, photo=open(path_to_file, 'rb'))
+            with open (path_to_file, 'rb') as photo:
+                await bot.send_photo(chat_id = chat_id, photo=photo)
             time.sleep(time_sleep)
     
 
