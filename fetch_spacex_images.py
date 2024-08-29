@@ -4,8 +4,8 @@ from basic_script import save_img
 
 
 def fetch_spacex_last_launch(launch_id):
-    url_sx = f'https://api.spacexdata.com/v5/launches/{launch_id}'
-    response = requests.get(url_sx)
+    sx_url = f'https://api.spacexdata.com/v5/launches/{launch_id}'
+    response = requests.get(sx_url)
     response.raise_for_status()
     links = response.json()['links']['flickr']['original']
     for number, link in enumerate(links):
