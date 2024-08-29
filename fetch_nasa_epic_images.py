@@ -23,8 +23,8 @@ def fetch_nasa_epic_images(api_key):
     for number, image in enumerate(response.json()):
         date_epic = get_date(image['date'])
         image_name = image['image']
-        url_nasa_epic_image = f'https://api.nasa.gov/EPIC/archive/natural/{date_epic}/png/{image_name}.png'
-        save_img(url=url_nasa_epic_image,
+        nasa_epic_image_url = f'https://api.nasa.gov/EPIC/archive/natural/{date_epic}/png/{image_name}.png'
+        save_img(url=nasa_epic_image_url,
                  img_path=f'images/nasa_epic{number}.png'
                  params = params)
 
