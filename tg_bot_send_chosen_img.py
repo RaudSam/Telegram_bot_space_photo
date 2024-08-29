@@ -9,7 +9,8 @@ from dotenv import load_dotenv
 async def publish_an_image(image_name, token, chat_id):
     bot = telegram.Bot(token = token)
     file = os.path.join("./images", image_name)
-    await bot.send_photo(chat_id = chat_id, photo=open(file, 'rb'))
+    with open (file, 'rb') as photo:
+                await bot.send_photo(chat_id = chat_id, photo=photo)
 
 
 def main():
